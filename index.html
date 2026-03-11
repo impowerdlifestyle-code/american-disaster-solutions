@@ -3,8 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>American Disaster Solutions | Emergency Tarping & Disaster Cleanup</title>
-  <meta name="description" content="Texas-based emergency tarping and disaster cleanup company. 24/7 rapid response when natural disasters strike. Call (800) 513-5ADS." />
+  <title>American Disaster Solutions | Emergency Tarping & Disaster Cleanup | Texas 24/7</title>
+  <meta name="description" content="Texas emergency tarping, storm damage cleanup, roof tarping, debris removal, water extraction & board-up services. Licensed & insured. 24/7 rapid response — call (800) 513-5ADS. Serving TX, OK, LA, AR." />
+  <meta name="keywords" content="emergency tarping, disaster cleanup, storm damage repair, roof tarping Texas, debris removal, water extraction, board up services, hurricane cleanup, tornado damage, hail damage repair, emergency restoration, disaster recovery Texas, Stephenville TX, property damage, insurance documentation, tree removal, flood cleanup, natural disaster response, 24/7 emergency service, commercial disaster cleanup" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://american-disaster-solutions.vercel.app/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="American Disaster Solutions | 24/7 Emergency Tarping & Disaster Cleanup" />
+  <meta property="og:description" content="Texas-based emergency tarping and disaster cleanup. Rapid deployment, licensed & insured. Roof tarping, debris removal, water extraction, board-up. Call (800) 513-5ADS." />
+  <meta property="og:url" content="https://american-disaster-solutions.vercel.app/" />
+  <meta property="og:site_name" content="American Disaster Solutions" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="American Disaster Solutions | Emergency Tarping & Cleanup" />
+  <meta name="twitter:description" content="24/7 emergency disaster response across Texas. Roof tarping, storm cleanup, water extraction. Call (800) 513-5ADS." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='20' width='100' height='100' fill='%23e63946'/><text x='50' y='68' text-anchor='middle' fill='white' font-family='sans-serif' font-size='40' font-weight='900'>ADS</text></svg>" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "American Disaster Solutions",
+    "description": "Texas-based emergency tarping and disaster cleanup specialists providing 24/7 rapid response for storm damage, roof tarping, debris removal, water extraction, and board-up services.",
+    "url": "https://american-disaster-solutions.vercel.app",
+    "telephone": "+18005135237",
+    "email": "kyle@americandisastersolutions.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4033 County Road 392",
+      "addressLocality": "Stephenville",
+      "addressRegion": "TX",
+      "postalCode": "76401",
+      "addressCountry": "US"
+    },
+    "areaServed": ["Texas", "Oklahoma", "Louisiana", "Arkansas", "Mississippi"],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "serviceType": ["Emergency Tarping", "Disaster Cleanup", "Property Board-Up", "Water Extraction", "Tree Removal", "Insurance Documentation"],
+    "priceRange": "$$"
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -327,7 +368,6 @@
       background: var(--dark-card); border: 1px solid var(--dark-border);
       border-radius: var(--radius-lg); padding: 40px 32px;
       transition: var(--transition); position: relative; overflow: hidden;
-      group: true;
     }
     .service-card::before {
       content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
@@ -1470,34 +1510,34 @@
 
         <div class="booking-card reveal">
           <h3>Request a Free Estimate</h3>
-          <form id="contactForm" onsubmit="handleFormSubmit(event)">
+          <form id="contactForm" action="https://formspree.io/f/xpwdqbkr" method="POST" onsubmit="handleFormSubmit(event)">
             <div class="form-row">
               <div class="form-group">
-                <label class="form-label">First Name *</label>
-                <input type="text" class="form-input" placeholder="John" required />
+                <label class="form-label" for="ads-fname">First Name *</label>
+                <input type="text" id="ads-fname" name="first_name" class="form-input" placeholder="John" required />
               </div>
               <div class="form-group">
-                <label class="form-label">Last Name *</label>
-                <input type="text" class="form-input" placeholder="Smith" required />
+                <label class="form-label" for="ads-lname">Last Name *</label>
+                <input type="text" id="ads-lname" name="last_name" class="form-input" placeholder="Smith" required />
               </div>
             </div>
             <div class="form-row">
               <div class="form-group">
-                <label class="form-label">Phone *</label>
-                <input type="tel" class="form-input" placeholder="(555) 123-4567" required />
+                <label class="form-label" for="ads-phone">Phone *</label>
+                <input type="tel" id="ads-phone" name="phone" class="form-input" placeholder="(555) 123-4567" required />
               </div>
               <div class="form-group">
-                <label class="form-label">Email *</label>
-                <input type="email" class="form-input" placeholder="john@email.com" required />
+                <label class="form-label" for="ads-email">Email *</label>
+                <input type="email" id="ads-email" name="email" class="form-input" placeholder="john@email.com" required />
               </div>
             </div>
             <div class="form-group">
-              <label class="form-label">Property Address</label>
-              <input type="text" class="form-input" placeholder="123 Main St, City, TX" />
+              <label class="form-label" for="ads-address">Property Address</label>
+              <input type="text" id="ads-address" name="address" class="form-input" placeholder="123 Main St, City, TX" />
             </div>
             <div class="form-group">
-              <label class="form-label">Service Needed *</label>
-              <select class="form-select" required>
+              <label class="form-label" for="ads-service">Service Needed *</label>
+              <select id="ads-service" name="service" class="form-select" required>
                 <option value="" disabled selected>Select a service...</option>
                 <option value="emergency-tarping">Emergency Tarping</option>
                 <option value="disaster-cleanup">Disaster Cleanup</option>
@@ -1509,8 +1549,8 @@
               </select>
             </div>
             <div class="form-group">
-              <label class="form-label">Urgency Level</label>
-              <select class="form-select">
+              <label class="form-label" for="ads-urgency">Urgency Level</label>
+              <select id="ads-urgency" name="urgency" class="form-select">
                 <option value="emergency">Emergency — Need help NOW</option>
                 <option value="urgent">Urgent — Within 24 hours</option>
                 <option value="standard" selected>Standard — Schedule at convenience</option>
@@ -1518,8 +1558,8 @@
               </select>
             </div>
             <div class="form-group">
-              <label class="form-label">Describe the Damage</label>
-              <textarea class="form-textarea" placeholder="Tell us about the damage, when it occurred, and any other details that will help us prepare..."></textarea>
+              <label class="form-label" for="ads-message">Describe the Damage</label>
+              <textarea id="ads-message" name="message" class="form-textarea" placeholder="Tell us about the damage, when it occurred, and any other details that will help us prepare..."></textarea>
             </div>
             <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:16px;">
               Submit Request
@@ -1552,9 +1592,9 @@
           </a>
           <p>Texas-based emergency tarping and disaster cleanup specialists. Rapid response when natural disasters strike. Licensed, insured, and ready 24/7.</p>
           <div class="footer-socials">
-            <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social" title="Facebook">f</a>
-            <a href="https://instagram.com" target="_blank" rel="noopener" class="footer-social" title="Instagram">&#9679;</a>
-            <a href="https://twitter.com" target="_blank" rel="noopener" class="footer-social" title="X / Twitter">X</a>
+            <a href="https://facebook.com/americandisastersolutions" target="_blank" rel="noopener noreferrer" class="footer-social" title="Facebook" aria-label="Facebook">f</a>
+            <a href="https://instagram.com/americandisastersolutions" target="_blank" rel="noopener noreferrer" class="footer-social" title="Instagram" aria-label="Instagram">&#9679;</a>
+            <a href="https://x.com/americandisaster" target="_blank" rel="noopener noreferrer" class="footer-social" title="X" aria-label="X / Twitter">X</a>
           </div>
         </div>
         <div>
@@ -1597,7 +1637,7 @@
   </footer>
 
   <!-- Scroll to top -->
-  <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0})">&#8593;</button>
+  <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0})" aria-label="Scroll to top">&#8593;</button>
 
   <!-- ═══════════════════════════════════════════════════════════════
        JAVASCRIPT
@@ -1654,8 +1694,16 @@
     // ── Form handler ────────────────────────────────────────────────
     function handleFormSubmit(e) {
       e.preventDefault();
-      document.getElementById('contactForm').style.display = 'none';
-      document.getElementById('formSuccess').style.display = 'block';
+      var form = document.getElementById('contactForm');
+      var data = new FormData(form);
+      fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+        .then(function(r) {
+          if (r.ok) {
+            form.style.display = 'none';
+            document.getElementById('formSuccess').style.display = 'block';
+          } else { alert('Something went wrong. Please call (800) 513-5ADS directly.'); }
+        })
+        .catch(function() { alert('Network error. Please call (800) 513-5ADS directly.'); });
     }
   </script>
 
