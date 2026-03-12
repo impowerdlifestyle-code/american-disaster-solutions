@@ -667,14 +667,13 @@
     .coverage-header .section-subtitle { margin: 0 auto; }
     .coverage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
     .coverage-map {
-      border-radius: var(--radius-lg);
+      aspect-ratio: 4/3; border-radius: var(--radius-lg);
       background: var(--dark-card); border: 1px solid var(--dark-border);
       display: flex; align-items: center; justify-content: center;
-      position: relative; overflow: hidden; padding: 16px;
-      min-height: 400px;
+      position: relative; overflow: hidden; padding: 24px;
     }
     .coverage-map object {
-      width: 100%; height: 100%; min-height: 380px;
+      width: 100%; height: 100%;
       filter: drop-shadow(0 0 18px rgba(230,57,70,0.5)) drop-shadow(0 0 40px rgba(230,57,70,0.25));
     }
     .coverage-map::after {
