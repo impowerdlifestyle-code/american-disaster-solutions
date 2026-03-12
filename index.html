@@ -409,6 +409,9 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 4rem; position: relative; overflow: hidden;
     }
+    .about-image-main img {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    }
     .about-image-main::after {
       content: ''; position: absolute; inset: 0;
       background: linear-gradient(135deg, transparent 60%, rgba(230,57,70,0.15));
@@ -556,6 +559,60 @@
       max-width: 600px; margin: 0 auto 40px; line-height: 1.7;
     }
     .cta-banner .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    /* ─── PROJECT GALLERY ─────────────────────────────────────────── */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 280px;
+      gap: 6px;
+      margin-top: 56px;
+    }
+    .gallery-item {
+      position: relative; overflow: hidden; cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.5s ease;
+      filter: brightness(0.85) saturate(0.9);
+    }
+    .gallery-item:hover img {
+      transform: scale(1.08);
+      filter: brightness(1) saturate(1.1);
+    }
+    .gallery-item::before {
+      content: ''; position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.6) 100%);
+      opacity: 0; transition: opacity 0.4s ease;
+    }
+    .gallery-item:hover::before { opacity: 1; }
+    .gallery-item .gallery-label {
+      position: absolute; bottom: 16px; left: 20px; z-index: 2;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: white;
+      opacity: 0; transform: translateY(10px);
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .gallery-item:hover .gallery-label {
+      opacity: 1; transform: translateY(0);
+    }
+    .gallery-item .gallery-line {
+      position: absolute; bottom: 40px; left: 20px; z-index: 2;
+      width: 32px; height: 2px; background: var(--primary);
+      opacity: 0; transform: scaleX(0); transform-origin: left;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.05s;
+    }
+    .gallery-item:hover .gallery-line {
+      opacity: 1; transform: scaleX(1);
+    }
+
+    @media (max-width: 1024px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 260px; }
+    }
+    @media (max-width: 480px) {
+      .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 240px; gap: 4px; }
+    }
 
     /* ─── BOOKING ─────────────────────────────────────────────────── */
     .booking { background: var(--gray-900); }
@@ -906,7 +963,7 @@
             When It Matters Most
           </h1>
           <p>
-            Texas-based emergency tarping and disaster cleanup specialists. When storms,
+            National emergency tarping and disaster cleanup specialists handling claims nationwide. When storms,
             hurricanes, and natural disasters strike, we deploy within hours to protect
             your property and restore your peace of mind.
           </p>
@@ -939,7 +996,7 @@
           <div class="hero-card">
             <div class="hero-card-icon">🛡️</div>
             <h3>Storm Damage?<br/>We're Already On The Way.</h3>
-            <p>Our rapid-deployment crews are staged and ready across Texas and surrounding states. One call is all it takes to mobilize our team to your location.</p>
+            <p>We're a national tarping company that handles claims nationwide. One call is all it takes to mobilize our team to your location.</p>
             <br/>
             <a href="tel:8005135237" class="btn btn-primary" style="width:100%;justify-content:center;">
               <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
@@ -977,6 +1034,7 @@
             <div class="service-icon">🏗️</div>
             <h3>Emergency Tarping</h3>
             <p>Rapid roof tarping services to prevent further water damage after storms. Our crews deploy within hours with commercial-grade materials designed to withstand ongoing severe weather.</p>
+            <p style="font-size:0.85rem;color:var(--gray-300);margin-bottom:20px;line-height:1.7;">We use 2 methods for our tarping — <strong style="color:var(--white);">Non-Invasive</strong> (Sandbags) &amp; <strong style="color:var(--white);">Invasive</strong> (Naildown) procedures.</p>
             <a href="#" onclick="navigateTo('services-page')" class="service-link">Learn More <span>&rarr;</span></a>
           </div>
           <div class="service-card reveal reveal-delay-2">
@@ -1092,6 +1150,59 @@
       </div>
     </section>
 
+    <!-- PROJECT GALLERY -->
+    <section class="section" style="background:var(--gray-900);">
+      <div class="container">
+        <div class="reveal" style="text-align:center;">
+          <div class="section-label">Our Work</div>
+          <h2 class="section-title">Recent Projects</h2>
+          <p class="section-subtitle">Real emergency tarping deployments across Texas and the Gulf Coast — residential, commercial, and municipal properties.</p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item reveal">
+            <img src="ads%20images/IMG_8259.jpeg" alt="Aerial view of blue emergency tarp on commercial building" loading="lazy" />
+            <div class="gallery-line"></div>
+            <div class="gallery-label">Commercial Tarping</div>
+          </div>
+          <div class="gallery-item reveal">
+            <img src="ads%20images/2022-10-17-12-30-56-408.png" alt="Blue tarp installation on condo complex" loading="lazy" />
+            <div class="gallery-line"></div>
+            <div class="gallery-label">Condo Complex</div>
+          </div>
+          <div class="gallery-item reveal">
+            <img src="ads%20images/2022-11-11-13-28-19-662.png" alt="Orange tarp on commercial high-rise rooftop" loading="lazy" />
+            <div class="gallery-line"></div>
+            <div class="gallery-label">High-Rise Rooftop</div>
+          </div>
+          <div class="gallery-item reveal">
+            <img src="ads%20images/IMG_8258.jpeg" alt="Blue emergency tarp on residential brick home" loading="lazy" />
+            <div class="gallery-line"></div>
+            <div class="gallery-label">Residential Home</div>
+          </div>
+          <div class="gallery-item reveal">
+            <img src="ads%20images/2022-11-14-11-46-20-285.png" alt="Emergency tarping on coastal commercial building" loading="lazy" />
+            <div class="gallery-line"></div>
+            <div class="gallery-label">Coastal Emergency</div>
+          </div>
+          <div class="gallery-item reveal">
+            <img src="ads%20images/2022-10-06-17-58-07-021.png" alt="Aerial view of multi-structure tarping project" loading="lazy" />
+            <div class="gallery-line"></div>
+            <div class="gallery-label">Multi-Structure</div>
+          </div>
+          <div class="gallery-item reveal">
+            <img src="ads%20images/2022-11-19-14-57-06-177.png" alt="Orange tarp on waterfront property" loading="lazy" />
+            <div class="gallery-line"></div>
+            <div class="gallery-label">Waterfront Property</div>
+          </div>
+          <div class="gallery-item reveal">
+            <img src="ads%20images/2022-11-19-14-58-13-444.png" alt="Emergency roof tarping on lakeside building" loading="lazy" />
+            <div class="gallery-line"></div>
+            <div class="gallery-label">Lakeside Tarping</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA BANNER -->
     <section class="cta-banner">
       <div class="container">
@@ -1126,7 +1237,7 @@
     <section class="about section">
       <div class="container">
         <div class="about-visual reveal">
-          <div class="about-image-main">🏗️</div>
+          <div class="about-image-main"><img src="ads%20images/IMG_8258.jpeg" alt="Emergency roof tarping on residential home" loading="lazy" /></div>
           <div class="about-float-card">
             <div class="stat-big">500+</div>
             <div class="stat-label">Properties Protected</div>
@@ -1251,7 +1362,9 @@
       <div class="container">
         <div class="grid-2">
           <!-- Service Detail Cards -->
-          <div class="service-card reveal" style="padding:48px;">
+          <div class="service-card reveal" style="padding:0;overflow:hidden;">
+            <img src="ads%20images/2022-10-17-12-30-56-408.png" alt="Emergency roof tarping on commercial building" style="width:100%;height:220px;object-fit:cover;" loading="lazy" />
+            <div style="padding:36px 48px 48px;">
             <div class="service-icon" style="width:72px;height:72px;font-size:2rem;border-radius:18px;">🏗️</div>
             <h3 style="font-size:1.4rem;margin-top:8px;">Emergency Roof Tarping</h3>
             <p style="font-size:0.95rem;line-height:1.8;margin-bottom:24px;">
@@ -1259,7 +1372,16 @@
               commercial-grade, UV-resistant tarps and professional fastening systems. We don't just throw a
               tarp on your roof — we engineer a water-tight seal that will hold through continued severe weather.
             </p>
+            <p style="font-size:0.95rem;line-height:1.8;margin-bottom:24px;color:var(--gray-300);">
+              We use 2 methods for our tarping — <strong style="color:var(--white);">Non-Invasive</strong> (Sandbags) &amp; <strong style="color:var(--white);">Invasive</strong> (Naildown) procedures.
+            </p>
             <div style="display:flex;flex-direction:column;gap:10px;">
+              <div style="display:flex;align-items:center;gap:10px;font-size:0.9rem;color:var(--gray-400);">
+                <span style="color:var(--primary);">&#10003;</span> Non-Invasive method: sandbag-secured tarps
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;font-size:0.9rem;color:var(--gray-400);">
+                <span style="color:var(--primary);">&#10003;</span> Invasive method: professional naildown installation
+              </div>
               <div style="display:flex;align-items:center;gap:10px;font-size:0.9rem;color:var(--gray-400);">
                 <span style="color:var(--primary);">&#10003;</span> Commercial-grade UV-resistant materials
               </div>
@@ -1273,9 +1395,12 @@
                 <span style="color:var(--primary);">&#10003;</span> Insurance-ready documentation
               </div>
             </div>
+            </div>
           </div>
 
-          <div class="service-card reveal" style="padding:48px;">
+          <div class="service-card reveal" style="padding:0;overflow:hidden;">
+            <img src="ads%20images/2022-11-14-11-46-20-285.png" alt="Storm damage cleanup on coastal building" style="width:100%;height:220px;object-fit:cover;" loading="lazy" />
+            <div style="padding:36px 48px 48px;">
             <div class="service-icon" style="width:72px;height:72px;font-size:2rem;border-radius:18px;">🌪️</div>
             <h3 style="font-size:1.4rem;margin-top:8px;">Storm Damage Cleanup</h3>
             <p style="font-size:0.95rem;line-height:1.8;margin-bottom:24px;">
@@ -1297,9 +1422,12 @@
                 <span style="color:var(--primary);">&#10003;</span> Environmentally responsible disposal
               </div>
             </div>
+            </div>
           </div>
 
-          <div class="service-card reveal" style="padding:48px;">
+          <div class="service-card reveal" style="padding:0;overflow:hidden;">
+            <img src="ads%20images/2022-11-19-14-58-13-444.png" alt="Emergency board-up and securing services" style="width:100%;height:220px;object-fit:cover;" loading="lazy" />
+            <div style="padding:36px 48px 48px;">
             <div class="service-icon" style="width:72px;height:72px;font-size:2rem;border-radius:18px;">🏠</div>
             <h3 style="font-size:1.4rem;margin-top:8px;">Board-Up & Securing</h3>
             <p style="font-size:0.95rem;line-height:1.8;margin-bottom:24px;">
@@ -1321,9 +1449,12 @@
                 <span style="color:var(--primary);">&#10003;</span> Temporary fencing available
               </div>
             </div>
+            </div>
           </div>
 
-          <div class="service-card reveal" style="padding:48px;">
+          <div class="service-card reveal" style="padding:0;overflow:hidden;">
+            <img src="ads%20images/2022-11-19-14-57-06-177.png" alt="Water extraction and emergency services" style="width:100%;height:220px;object-fit:cover;" loading="lazy" />
+            <div style="padding:36px 48px 48px;">
             <div class="service-icon" style="width:72px;height:72px;font-size:2rem;border-radius:18px;">💧</div>
             <h3 style="font-size:1.4rem;margin-top:8px;">Water Extraction & Drying</h3>
             <p style="font-size:0.95rem;line-height:1.8;margin-bottom:24px;">
@@ -1344,6 +1475,7 @@
               <div style="display:flex;align-items:center;gap:10px;font-size:0.9rem;color:var(--gray-400);">
                 <span style="color:var(--primary);">&#10003;</span> Mold prevention treatment
               </div>
+            </div>
             </div>
           </div>
         </div>
