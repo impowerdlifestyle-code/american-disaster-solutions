@@ -670,15 +670,15 @@
       aspect-ratio: 4/3; border-radius: var(--radius-lg);
       background: var(--dark-card); border: 1px solid var(--dark-border);
       display: flex; align-items: center; justify-content: center;
-      position: relative; overflow: hidden; padding: 0;
+      position: relative; overflow: hidden; padding: 24px;
     }
-    .coverage-map img {
-      width: 100%; height: 100%; object-fit: contain; padding: 24px;
-      filter: invert(0.85) sepia(0.2) saturate(0.5) hue-rotate(170deg) brightness(0.7) drop-shadow(0 4px 30px rgba(230,57,70,0.2));
+    .coverage-map object {
+      width: 100%; height: 100%;
+      filter: drop-shadow(0 0 18px rgba(230,57,70,0.5)) drop-shadow(0 0 40px rgba(230,57,70,0.25));
     }
     .coverage-map::after {
       content: ''; position: absolute; inset: 0;
-      background: radial-gradient(circle at 50% 50%, rgba(230,57,70,0.08) 0%, transparent 70%);
+      background: radial-gradient(circle at 50% 50%, rgba(230,57,70,0.06) 0%, transparent 70%);
       pointer-events: none;
     }
     .coverage-states { display: flex; flex-direction: column; gap: 12px; }
@@ -856,7 +856,7 @@
       .cta-actions .btn { width: 100%; justify-content: center; padding: 16px 24px; }
 
       /* ── Coverage ── */
-      .coverage-map img { padding: 16px; }
+      .coverage-map { padding: 16px; }
       .coverage-state { padding: 14px 16px; }
 
       /* ── Booking / Forms ── */
@@ -1301,7 +1301,7 @@
           <p class="section-subtitle">Our primary service area covers Texas and surrounding states, with rapid-deployment capability nationwide for major disaster events.</p>
         </div>
         <div class="coverage-grid reveal">
-          <div class="coverage-map"><img src="ads%20images/us-map.png" alt="United States coverage map — nationwide service" loading="lazy" /></div>
+          <div class="coverage-map"><object type="image/svg+xml" data="ads%20images/us-map-interactive.svg" aria-label="Interactive United States coverage map — click any state for a free estimate"></object></div>
           <div class="coverage-states">
             <div class="coverage-state">
               <div class="coverage-state-dot"></div>
@@ -1829,6 +1829,24 @@
     document.addEventListener('DOMContentLoaded', initReveal);
 
     // ── Form handler ────────────────────────────────────────────────
+    // ── Interactive map setup ──────────────────────────────────────
+    function initMap() {
+      var obj = document.querySelector('.coverage-map object');
+      if (!obj) return;
+      obj.addEventListener('load', function() {
+        try {
+          var svgDoc = obj.contentDocument;
+          if (!svgDoc) return;
+          svgDoc.querySelectorAll('path').forEach(function(path) {
+            path.addEventListener('click', function() {
+              navigateTo('booking-page');
+            });
+          });
+        } catch(e) { /* cross-origin fallback: SVG onclick handles it */ }
+      });
+    }
+    initMap();
+
     function handleFormSubmit(e) {
       e.preventDefault();
       var form = document.getElementById('contactForm');
