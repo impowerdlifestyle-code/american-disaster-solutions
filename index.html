@@ -669,12 +669,11 @@
     .coverage-map {
       border-radius: var(--radius-lg);
       background: var(--dark-card); border: 1px solid var(--dark-border);
-      display: flex; align-items: center; justify-content: center;
-      position: relative; overflow: hidden; padding: 8px;
-      min-height: 520px;
+      position: relative; overflow: hidden;
+      min-height: 550px;
     }
     .coverage-map object {
-      width: 100%; height: 100%;
+      display: block; width: 100%; height: 550px;
       filter: drop-shadow(0 0 18px rgba(230,57,70,0.5)) drop-shadow(0 0 40px rgba(230,57,70,0.25));
     }
     .coverage-map::after {
