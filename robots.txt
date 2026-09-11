@@ -1,10 +1,30 @@
 User-agent: *
 Allow: /
 
+# AI Search Crawlers - Explicitly Allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# AI Training Crawlers - Blocked
 User-agent: CCBot
 Disallow: /
 
 User-agent: cohere-ai
+Disallow: /
+
+User-agent: anthropic-ai
 Disallow: /
 
 Sitemap: https://americandisastersolutions.com/sitemap.xml

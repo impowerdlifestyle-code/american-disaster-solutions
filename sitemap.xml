@@ -2,30 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://americandisastersolutions.com/</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-03-26</lastmod>
   </url>
   <url>
     <loc>https://americandisastersolutions.com/about</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-03-26</lastmod>
   </url>
   <url>
     <loc>https://americandisastersolutions.com/services</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-03-26</lastmod>
+  </url>
+  <url>
+    <loc>https://americandisastersolutions.com/services/emergency-tarping</loc>
+    <lastmod>2026-03-26</lastmod>
+  </url>
+  <url>
+    <loc>https://americandisastersolutions.com/services/disaster-cleanup</loc>
+    <lastmod>2026-03-26</lastmod>
+  </url>
+  <url>
+    <loc>https://americandisastersolutions.com/services/board-up</loc>
+    <lastmod>2026-03-26</lastmod>
+  </url>
+  <url>
+    <loc>https://americandisastersolutions.com/services/water-extraction</loc>
+    <lastmod>2026-03-26</lastmod>
+  </url>
+  <url>
+    <loc>https://americandisastersolutions.com/services/tree-removal</loc>
+    <lastmod>2026-03-26</lastmod>
+  </url>
+  <url>
+    <loc>https://americandisastersolutions.com/services/insurance-documentation</loc>
+    <lastmod>2026-03-26</lastmod>
   </url>
   <url>
     <loc>https://americandisastersolutions.com/team</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-03-26</lastmod>
   </url>
   <url>
     <loc>https://americandisastersolutions.com/contact</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-03-26</lastmod>
   </url>
   <url>
-    <loc>https://americandisastersolutions.com/privacy</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://americandisastersolutions.com/blog</loc>
+    <lastmod>2026-03-26</lastmod>
   </url>
   <url>
-    <loc>https://americandisastersolutions.com/terms</loc>
-    <lastmod>2026-03-24</lastmod>
+    <loc>https://americandisastersolutions.com/blog/what-to-do-after-storm-damage</loc>
+    <lastmod>2026-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://americandisastersolutions.com/blog/emergency-tarping-methods-explained</loc>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  <url>
+    <loc>https://americandisastersolutions.com/blog/how-insurance-claims-work-after-hurricane</loc>
+    <lastmod>2026-02-15</lastmod>
+  </url>
+  <url>
+    <loc>https://americandisastersolutions.com/blog/storm-season-preparation-checklist</loc>
+    <lastmod>2026-01-20</lastmod>
   </url>
 </urlset>
